@@ -15,6 +15,7 @@ A página apresenta o evento, a programação, as categorias e os links para ins
     └── assets/
         ├── logo_ucdbits.svg                # logo do evento (abertura)
         ├── logo_ucdb.svg                   # logo da universidade (topo e rodapé)
+        ├── selo_ucdbits.jpg                # selo UCDBits (rodapé, realização)
         └── edital-i-maratona-ucdbits.pdf   # edital oficial
 ```
 
@@ -39,7 +40,7 @@ python -m http.server 8000
 | Topo | Logo da UCDB e localização |
 | Abertura | Logo UCDBits, título, data/local, botões de inscrição e edital, prazo |
 | Sobre | Formato da prova (padrão Maratona SBC/ICPC), números (3 por equipe, 7 problemas, 3 h, 1 computador) e os balões A–G |
-| Programação | Cronograma de sexta (treino livre) e sábado (credenciamento, prova, premiação) |
+| Programação | Cronograma de sexta (Treinamento UCDBits) e sábado (credenciamento, prova, premiação) |
 | Inscrições | Período, regras de inscrição e categorias (Geral, Feminina, Café com Leite) |
 | Rodapé | Realização e links do evento |
 | Barra fixa (celular) | Botões de inscrição/edital que aparecem quando os botões da abertura saem da tela |

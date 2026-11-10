@@ -120,6 +120,8 @@ h1 .assin{display:block;font-family:var(--f-assin);font-weight:400;font-size:1.2
 .rodape h2{margin:0 0 14px;font-family:var(--f-mono);font-weight:500;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#aab3cc}
 .selo{display:inline-block;background:#fff;padding:12px 16px;border-radius:4px}
 .selo img{height:64px;width:auto}
+.selos{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.selo-ucdbits{height:88px;width:88px;border-radius:4px}
 .rodape nav{display:flex;flex-direction:column;gap:8px;text-align:right;font-size:15px}
 .rodape nav a{text-decoration:none;border-bottom:1px solid #4b5677;padding-bottom:1px}
 .rodape nav a:hover{border-color:var(--amarelo)}
@@ -226,7 +228,7 @@ h1 .assin{display:block;font-family:var(--f-assin);font-weight:400;font-size:1.2
           <div class="dia">
             <h3>Sexta-feira <span>04.12.2026</span></h3>
             <ul>
-              <li><span class="hora">19h10–21h30</span><div><strong>Treino livre</strong><em>Apresentação das regras e do sistema de submissão. Não conta para a classificação.</em></div></li>
+              <li><span class="hora">19h10–21h30</span><div><strong>Treinamento UCDBits</strong><em>Apresentação das regras e do sistema de submissão. Não conta para a classificação.</em></div></li>
             </ul>
           </div>
           <div class="dia">
@@ -268,7 +270,10 @@ h1 .assin{display:block;font-family:var(--f-assin);font-weight:400;font-size:1.2
   <div class="miolo">
     <div>
       <h2>Realização</h2>
-      <span class="selo"><img src="assets/logo_ucdb.svg" alt="UCDB – Universidade Católica Dom Bosco"></span>
+      <div class="selos">
+        <span class="selo"><img src="assets/logo_ucdb.svg" alt="UCDB – Universidade Católica Dom Bosco"></span>
+        <img class="selo-ucdbits" src="assets/selo_ucdbits.jpg" alt="UCDBits" width="88" height="88">
+      </div>
     </div>
     <nav aria-label="Links do evento">
       <a href="https://www.even3.com.br/i-maratona-de-programacao-ucdbits-807530/" target="_blank" rel="noopener">Página do evento no Even3</a>
