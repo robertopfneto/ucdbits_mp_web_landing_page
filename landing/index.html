@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}</style>
+<title>Maratona UCDBits</title>
+<meta name="description" content="I Maratona de Programação UCDBits: competição de programação em equipes na Universidade Católica Dom Bosco, em Campo Grande (MS), nos dias 4 e 5 de dezembro de 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: papel claro do logo; abertura em duas colunas (marca | informação), seções em faixa estreita
+   com rótulos em fonte mono à esquerda; os balões do logo viram a legenda dos sete problemas. */
+:root{
+  --papel:#fbf8f1;      /* fundo do logo original */
+  --papel-2:#f3eee2;    /* faixa alternada */
+  --tinta:#0b1736;      /* azul-marinho do "UCDBits" */
+  --tinta-2:#4a5068;    /* texto secundário, cinza puxado ao marinho */
+  --azul:#1450b8;       /* chaves e balões azuis */
+  --azul-esc:#0e3d8f;
+  --amarelo:#f7b80c;    /* balão central */
+  --linha:#ddd6c6;
+  --ucdb:#cd4830;       /* vermelho do símbolo UCDB, uso pontual */
+
+  --f-assin:"Allura",cursive;            /* títulos curtos e destaques */
+  --f-texto:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  --largura:1120px;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.faixa{padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.miolo{max-width:var(--largura);margin-inline:auto}
+
+/* ---------- topo ---------- */
+.topo{border-bottom:1px solid var(--linha)}
+.topo .miolo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.topo img{height:40px;width:auto}
+.topo span{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.02em;color:var(--tinta-2);text-align:right}
+
+/* ---------- abertura ---------- */
+.abertura .miolo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,7vw,88px) clamp(44px,7vw,96px)}
+.marca{display:flex;justify-content:center}
+.marca img{width:min(100%,440px)}
+.texto-abertura{min-width:0}
+h1{margin:0;font-weight:800;font-size:clamp(34px,5.2vw,60px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+h1 .assin{display:block;font-family:var(--f-assin);font-weight:400;font-size:1.25em;letter-spacing:0;line-height:.9;color:var(--azul);margin-top:.12em}
+.quando{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:28px 0 0;padding:18px 0 0;border-top:2px solid var(--tinta)}
+.quando dt{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2);padding-top:3px}
+.quando dd{margin:0;font-weight:600;font-size:18px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:6px;font-weight:700;font-size:16.5px;text-decoration:none;border:2px solid var(--azul);transition:background-color .15s,color .15s,border-color .15s}
+.btn-prim{background:var(--azul);color:#fff}
+.btn-prim:hover{background:var(--azul-esc);border-color:var(--azul-esc)}
+.btn-sec{background:transparent;color:var(--azul)}
+.btn-sec:hover{background:var(--azul);color:#fff}
+.btn:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.btn small{font-family:var(--f-mono);font-weight:500;font-size:12px}
+.prazo{margin:14px 0 0;font-size:15px;color:var(--tinta-2)}
+
+/* ---------- seções ---------- */
+.secao .miolo{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(20px,4vw,56px);padding-block:clamp(48px,7vw,84px);border-top:1px solid var(--linha)}
+.secao.alt{background:var(--papel-2)}
+.secao.alt .miolo{border-top-color:transparent}
+.rotulo{margin:0;font-family:var(--f-assin);font-weight:400;font-size:clamp(44px,4.4vw,54px);line-height:1;color:var(--azul);overflow-wrap:anywhere}
+.corpo{min-width:0;max-width:68ch}
+.corpo p{margin:0 0 1em}
+.corpo p:last-child{margin-bottom:0}
+.lead{font-size:clamp(18px,2vw,20px);line-height:1.55}
+
+.numeros{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:32px 0 0;border-top:2px solid var(--tinta)}
+.numeros div{padding:14px 12px 0 0}
+.numeros b{display:block;font-weight:800;font-size:clamp(30px,4vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+.numeros span{display:block;margin-top:6px;font-size:14.5px;color:var(--tinta-2);line-height:1.35}
+
+/* problemas A–G como balões */
+.baloes{margin:40px 0 0}
+.baloes h3{margin:0 0 14px;font-family:var(--f-mono);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.baloes ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 14px}
+.baloes li{display:flex;flex-direction:column;align-items:center}
+.balao{width:44px;height:52px;border-radius:50% 50% 48% 48% / 56% 56% 44% 44%;display:grid;place-items:center;font-weight:800;font-size:17px;color:#fff;position:relative}
+.balao::after{content:"";position:absolute;bottom:-5px;left:50%;width:8px;height:7px;transform:translateX(-50%);background:inherit;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.fio{width:1.5px;height:18px;background:var(--linha);margin-top:4px}
+.baloes p{margin:14px 0 0;font-size:15.5px;color:var(--tinta-2)}
+
+/* programação */
+.dias{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
+.dia h3{margin:0;padding-bottom:10px;border-bottom:2px solid var(--tinta);display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:20px;font-weight:700}
+.dia h3 span{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--tinta-2);letter-spacing:.04em}
+.dia ul{list-style:none;margin:0;padding:0}
+.dia li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--linha)}
+.dia time,.dia .hora{font-family:var(--f-mono);font-size:14.5px;color:var(--azul);font-variant-numeric:tabular-nums;padding-top:1px}
+.dia li strong{font-weight:600}
+.dia li em{display:block;font-style:normal;font-size:15px;color:var(--tinta-2)}
+.dia li.destaque strong{position:relative}
+.dia li.destaque{border-left:4px solid var(--amarelo);padding-left:12px;margin-left:-16px}
+
+/* inscrições e categorias */
+.datas-insc{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 18px}
+.datas-insc b{font-weight:800;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.01em}
+.datas-insc span{color:var(--tinta-2)}
+.cats{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;border-top:2px solid var(--tinta)}
+.cats li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--linha)}
+.cats strong{font-size:18px;font-weight:700}
+.cats p{margin:0;color:var(--tinta-2)}
+.secao .acoes{margin-top:32px}
+
+/* ---------- rodapé ---------- */
+.rodape{background:var(--tinta);color:#e9ecf5}
+.rodape .miolo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;padding-block:48px calc(40px + var(--barra-h,0px))}
+.rodape h2{margin:0 0 14px;font-family:var(--f-mono);font-weight:500;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#aab3cc}
+.selo{display:inline-block;background:#fff;padding:12px 16px;border-radius:4px}
+.selo img{height:64px;width:auto}
+.rodape nav{display:flex;flex-direction:column;gap:8px;text-align:right;font-size:15px}
+.rodape nav a{text-decoration:none;border-bottom:1px solid #4b5677;padding-bottom:1px}
+.rodape nav a:hover{border-color:var(--amarelo)}
+.rodape .nota{grid-column:1/-1;margin:0;font-size:13.5px;color:#aab3cc;border-top:1px solid #26325a;padding-top:20px}
+
+/* ---------- barra fixa (celular) ---------- */
+.barra{display:none}
+@media (max-width:720px){
+  body{font-size:16.5px}
+  .topo span{display:none}
+  .abertura .miolo{grid-template-columns:1fr;gap:28px;padding-block:28px 48px}
+  .marca img{width:min(78%,340px)}
+  .acoes{flex-direction:column}
+  .acoes .btn{width:100%}
+  .secao .miolo{grid-template-columns:1fr;gap:14px}
+  .numeros{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}
+  .dias{grid-template-columns:1fr}
+  .dia li{grid-template-columns:104px minmax(0,1fr)}
+  .cats li{grid-template-columns:1fr;gap:4px}
+  .baloes ol{gap:8px;flex-wrap:nowrap}
+  .balao{width:38px;height:45px;font-size:15px}
+  .rodape .miolo{grid-template-columns:1fr}
+  .rodape nav{text-align:left}
+  :root{--barra-h:84px}
+  .barra{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;
+    padding:10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter-l);
+    background:var(--papel);border-top:1px solid var(--linha);
+    transform:translateY(0);transition:transform .2s ease}
+  .barra .btn{flex:1;min-height:50px;padding:0 12px;font-size:15.5px}
+  .barra.oculta{transform:translateY(110%)}
+}
+@media (min-width:721px) and (max-width:980px){
+  .abertura .miolo{grid-template-columns:minmax(0,4fr) minmax(0,6fr)}
+  .secao .miolo{grid-template-columns:1fr;gap:14px}
+  .cats li{grid-template-columns:160px minmax(0,1fr)}
+  .dias{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="topo faixa">
+  <div class="miolo">
+    <img src="assets/logo_ucdb.svg" alt="UCDB – Universidade Católica Dom Bosco">
+    <span>Universidade Católica Dom Bosco · Campo Grande, MS</span>
+  </div>
+</header>
+
+<main>
+  <section class="abertura faixa" aria-labelledby="titulo">
+    <div class="miolo">
+      <div class="marca">
+        <img src="assets/logo_ucdbits.svg" alt="Logo UCDBits: três balões entre chaves sobre a palavra UCDBits" width="3246" height="2073">
+      </div>
+      <div class="texto-abertura">
+        <h1 id="titulo">I Maratona de Programação <span class="assin">UCDBits</span></h1>
+        <dl class="quando">
+          <dt>Quando</dt><dd>4 e 5 de dezembro de 2026</dd>
+          <dt>Onde</dt><dd>Universidade Católica Dom Bosco, Campo Grande – MS</dd>
+        </dl>
+        <div class="acoes" id="acoes-abertura">
+          <a class="btn btn-prim" href="https://www.even3.com.br/i-maratona-de-programacao-ucdbits-807530/" target="_blank" rel="noopener">Inscreva-se pelo Even3</a>
+          <a class="btn btn-sec" href="assets/edital-i-maratona-ucdbits.pdf" target="_blank" rel="noopener">Acesse o edital <small>PDF</small></a>
+        </div>
+        <p class="prazo">Inscrições abertas e gratuitas de 11 de novembro a 2 de dezembro, até 23h59.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao faixa" aria-labelledby="s-sobre">
+    <div class="miolo">
+      <h2 class="rotulo" id="s-sobre">Sobre</h2>
+      <div class="corpo">
+        <p class="lead">A I Maratona de Programação UCDBits é uma competição de programação em equipes promovida pela Universidade Católica Dom Bosco, no formato da Maratona SBC de Programação, etapa sul-americana do International Collegiate Programming Contest (ICPC).</p>
+        <p>Cada equipe usa um único computador para resolver problemas de lógica e programação em C, C++, Java ou Python. As soluções são enviadas a um sistema de correção automática, que testa cada programa e responde na hora se ele foi aceito. Vence a equipe que resolver mais problemas no menor tempo; cada tentativa incorreta soma 20 minutos de penalidade. Durante a prova vale consultar material impresso, mas internet, celulares e ferramentas de inteligência artificial ficam de fora.</p>
+        <div class="numeros">
+          <div><b>3</b><span>estudantes por equipe</span></div>
+          <div><b>7</b><span>problemas</span></div>
+          <div><b>3 h</b><span>de prova</span></div>
+          <div><b>1</b><span>computador por equipe</span></div>
+        </div>
+        <div class="baloes">
+          <h3>Os sete problemas</h3>
+          <ol aria-label="Problemas de A a G">
+            <li><span class="balao" style="background:#1450b8">A</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#f7b80c;color:#0b1736">B</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#cd4830">C</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#27794c">D</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#6b4bb0">E</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#e07a1f;color:#0b1736">F</span><span class="fio"></span></li>
+            <li><span class="balao" style="background:#0b1736">G</span><span class="fio"></span></li>
+          </ol>
+          <p>Como na maratona oficial, cada problema aceito rende à equipe um balão da cor da sua letra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao alt faixa" aria-labelledby="s-prog">
+    <div class="miolo">
+      <h2 class="rotulo" id="s-prog">Programação</h2>
+      <div class="corpo" style="max-width:none">
+        <div class="dias">
+          <div class="dia">
+            <h3>Sexta-feira <span>04.12.2026</span></h3>
+            <ul>
+              <li><span class="hora">19h10–21h30</span><div><strong>Treino livre</strong><em>Apresentação das regras e do sistema de submissão. Não conta para a classificação.</em></div></li>
+            </ul>
+          </div>
+          <div class="dia">
+            <h3>Sábado <span>05.12.2026</span></h3>
+            <ul>
+              <li><span class="hora">9h00–10h00</span><div><strong>Credenciamento</strong><em>Leve documento oficial com foto.</em></div></li>
+              <li><span class="hora">10h00–10h30</span><div><strong>Abertura e orientações finais</strong></div></li>
+              <li class="destaque"><span class="hora">10h30–13h30</span><div><strong>Prova oficial</strong><em>Três horas, sete problemas.</em></div></li>
+              <li><span class="hora">a partir 11h30</span><div><strong>Lanche</strong><em>Servido durante a prova, sem pausar o relógio.</em></div></li>
+              <li><span class="hora">após 13h30</span><div><strong>Resultado e premiação</strong></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao faixa" aria-labelledby="s-insc">
+    <div class="miolo">
+      <h2 class="rotulo" id="s-insc">Inscrições</h2>
+      <div class="corpo">
+        <p class="datas-insc"><b>11.11 a 02.12</b><span>até 23h59 · gratuitas</span></p>
+        <p>A inscrição é individual e feita pelo Even3. Cada integrante preenche o formulário informando o mesmo nome de equipe; a equipe está inscrita quando os três concluírem. Podem participar estudantes de graduação e de pós-graduação da UCDB e estudantes de outras instituições de ensino.</p>
+        <ul class="cats">
+          <li><strong>Geral</strong><p>Equipes formadas por estudantes de graduação da UCDB.</p></li>
+          <li><strong>Feminina</strong><p>Equipes de três alunas de graduação da UCDB. Concorrem também na Geral.</p></li>
+          <li><strong>Café com Leite</strong><p>Equipes com ao menos um estudante de outra instituição ou da pós-graduação. Classificação própria.</p></li>
+        </ul>
+        <div class="acoes">
+          <a class="btn btn-prim" href="https://www.even3.com.br/i-maratona-de-programacao-ucdbits-807530/" target="_blank" rel="noopener">Inscreva-se pelo Even3</a>
+          <a class="btn btn-sec" href="assets/edital-i-maratona-ucdbits.pdf" target="_blank" rel="noopener">Acesse o edital <small>PDF</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape faixa">
+  <div class="miolo">
+    <div>
+      <h2>Realização</h2>
+      <span class="selo"><img src="assets/logo_ucdb.svg" alt="UCDB – Universidade Católica Dom Bosco"></span>
+    </div>
+    <nav aria-label="Links do evento">
+      <a href="https://www.even3.com.br/i-maratona-de-programacao-ucdbits-807530/" target="_blank" rel="noopener">Página do evento no Even3</a>
+      <a href="assets/edital-i-maratona-ucdbits.pdf" target="_blank" rel="noopener">Edital (PDF)</a>
+    </nav>
+    <p class="nota">I Maratona de Programação UCDBits · Universidade Católica Dom Bosco · Campo Grande, Mato Grosso do Sul · 2026</p>
+  </div>
+</footer>
+
+<div class="barra oculta" id="barra" aria-hidden="true">
+  <a class="btn btn-prim" href="https://www.even3.com.br/i-maratona-de-programacao-ucdbits-807530/" target="_blank" rel="noopener" tabindex="-1">Inscreva-se</a>
+  <a class="btn btn-sec" href="assets/edital-i-maratona-ucdbits.pdf" target="_blank" rel="noopener" tabindex="-1">Edital <small>PDF</small></a>
+</div>
+
+<script>
+(function(){
+  var barra=document.getElementById('barra');
+  var alvo=document.getElementById('acoes-abertura');
+  if(!barra||!alvo||!('IntersectionObserver' in window)){ if(barra){barra.classList.remove('oculta');barra.removeAttribute('aria-hidden');} return; }
+  function mostrar(v){
+    barra.classList.toggle('oculta',!v);
+    barra.setAttribute('aria-hidden', v ? 'false' : 'true');
+    barra.querySelectorAll('a').forEach(function(a){ a.tabIndex = v ? 0 : -1; });
+  }
+  new IntersectionObserver(function(es){
+    var e=es[0];
+    // mostra a barra quando os botões da abertura saem da tela por cima
+    mostrar(!e.isIntersecting && e.boundingClientRect.top < 0);
+  }).observe(alvo);
+})();
+</script>
+</body>
+</html>
