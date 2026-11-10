@@ -14,8 +14,9 @@ A página apresenta o evento, a programação, as categorias e os links para ins
     ├── index.html                          # página única (HTML + CSS + JS inline)
     └── assets/
         ├── logo_ucdbits.svg                # logo do evento (abertura)
-        ├── logo_ucdb.svg                   # logo da universidade (topo e rodapé)
-        ├── selo_ucdbits.jpg                # selo UCDBits (rodapé, realização)
+        ├── logo_ucdb.svg                   # logo da universidade (topo)
+        ├── logo_ucdb_branco.svg            # logo da universidade em branco (rodapé)
+        ├── logo_ucdbits_branco.svg         # selo UCDBits em branco, vetorizado (rodapé)
         └── edital-i-maratona-ucdbits.pdf   # edital oficial
 ```
 
